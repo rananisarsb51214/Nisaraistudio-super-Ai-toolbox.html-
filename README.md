@@ -1,4 +1,47 @@
-# Nisaraistudio-super-Ai-toolbox.html-
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nisar AI Studio - AI That Gets Clients</title>
+<style>
+body{background:#000;color:#fff;font-family:sans-serif;margin:0}
+.gold{color:#D4AF37}
+.btn{background:#D4AF37;color:#000;padding:14px 28px;border:none;font-weight:bold;cursor:pointer;width:100%;border-radius:8px}
+.card{background:#111;padding:20px;border-radius:12px;border:1px solid #222;margin:10px}
+input,select{width:100%;padding:12px;margin:8px 0;background:#111;color:#fff;border:1px solid #333;border-radius:6px}
+</style>
+</head>
+<body>
+<div style="text-align:center;padding:60px 20px">
+<h1><span class="gold">Nisar AI Studio</span><br>AI That Gets Clients</h1>
+<p>We build WhatsApp Bots, Lead Systems & AI Automations</p>
+</div>
+
+<div class="card" style="max-width:400px;margin:auto">
+<h3 class="gold">Get Free Consultation</h3>
+<input id="clientName" placeholder="Your Name">
+<input id="businessType" placeholder="Business Type (e.g. Cloth Shop)">
+<input id="clientWhatsapp" placeholder="WhatsApp Number">
+<select id="budget"><option>Budget</option><option>10k-20k</option><option>20k-50k</option><option>50k+</option></select>
+<button class="btn" onclick="sendLead()">Send Lead & Chat on WhatsApp</button>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJTocqhFzrjE-kBsdjB8EVzEFy_opNk8YtjmE_I24Uh0EZbMT6Xz7WUUejAqSPyC9A/exec";
+function sendLead(){
+ const data = {
+  clientName: document.getElementById("clientName").value,
+  businessType: document.getElementById("businessType").value,
+  clientWhatsapp: document.getElementById("clientWhatsapp").value,
+  budget: document.getElementById("budget").value
+ };
+ if(!data.clientName || !data.clientWhatsapp){alert("Name & WhatsApp required");return;}
+ fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify(data)})
+ .then(()=>{alert("Lead Sent!"); window.open("https://wa.me/923235052148?text=Hi Nisar AI Studio, I submitted a lead: "+data.clientName,"_blank");});
+}
+</script>
+</body>
+</html> Nisaraistudio-super-Ai-toolbox.html-
 &lt;meta property="og:description" content="Explore Nisaraistudio Toolbox—a handy set of free web tools for creativity, design, and everyday productivity.">
 # Nisaraistudio Toolbox
 
